@@ -8,6 +8,8 @@ RUN npm i
 
 EXPOSE 9000
 
-ENV APPID=""
+ARG APPID
+
+ENV APPID=${APPID}
 
 CMD ["npm", "run", "dev"]
