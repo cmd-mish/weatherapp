@@ -10,4 +10,4 @@ EXPOSE 9000
 
 ENV APPID=""
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
