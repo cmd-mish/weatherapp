@@ -1,0 +1,9 @@
+- name: Copy .env file to remote machine
+  hosts: aws-ec2
+  become: true
+
+  tasks:
+    - name: Copy .env file
+      copy:
+        src: ../../.env
+        dest: /home/ubuntu/weatherapp/.env
