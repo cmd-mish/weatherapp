@@ -1,0 +1,9 @@
+- name: Clone repository from Git
+  hosts: aws-ec2
+
+  tasks:
+    - name: Clone repository
+      git:
+        repo: https://github.com/cmd-mish/weatherapp
+        dest: /home/ubuntu/weatherapp
+        version: main
