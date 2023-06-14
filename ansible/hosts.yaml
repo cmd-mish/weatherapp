@@ -1,0 +1,6 @@
+all:
+  hosts:
+    aws-ec2:
+      ansible_host: <HOST_IP>
+      ansible_user: ubuntu
+      ansible_ssh_private_key_file: <PATH_TO_PRIVATE_KEY>
