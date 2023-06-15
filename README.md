@@ -1,12 +1,11 @@
 # weatherapp
 
-## Preparation steps
+## Prerequisites
 - Get [OpenWeatherMap API key](https://openweathermap.org/)
-- [Install docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/) on your local machine
-- [Install Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) on your local machine
 - Clone this repository to your local machine
 
 ## Setup development environment
+- [Install docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/) on your local machine
 - Place OpenWeatherMap API key in `.env` file in the root of the project
 
 There are several ways to setup containerised development environment:
@@ -26,3 +25,14 @@ Building containers via docker-compose is the easiest way to setup development e
 
 - Move to `frontend` directory
 - Run `docker build -t weatherapp_frontend . && docker run --rm -i -p 8000:8000 --name weatherapp_frontend -t weatherapp_frontend`
+
+## Deploy application to the cloud with Ansible
+*Demo  of this application is deployed to AWS EC2 instance and available at [13.50.73.128](http://13.50.73.128)*
+- [Install Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) on your local machine
+- Launch a virtual machine (VM) in the cloud (e.g. [AWS EC2 instance](https://aws.amazon.com/ec2/)). Choose Ubuntu Server 22.04 LTS as an operating system or similar.
+- Place VM's SSH access key to `ansible/ec2-key.pem` file
+- Place OpenWeatherMap API key in `.env` file in the root of the project (if not done yet)
+- Insert VM's public IP address to `docker-compose-prod.yaml` file at `ENDPOINT` environment variable
+- Insert VM's public IP address to `ansible/hosts.yaml` file at `ansible_host` 
+- Move to `ansible` directory and run `ansible-playbook deploy_app.yaml`
+- Open your VM's public IP address in your browser to display frontend (use http)
