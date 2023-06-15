@@ -12,4 +12,4 @@ ARG APPID
 
 ENV APPID=${APPID}
 
-CMD ["npm", "run", "dev"]
+CMD ["npm", "start"]

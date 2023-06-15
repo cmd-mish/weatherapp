@@ -1,18 +1,21 @@
 services:
-    backend:
-        container_name: backend
+    backend_prod:
+        container_name: backend_prod
         build:
             context: ./backend
-            dockerfile: Dockerfile
+            dockerfile: Dockerfile.prod
         ports:
             - 9000:9000
         environment:
             - APPID=${APPID}
 
-    frontend:
-        container_name: frontend
+    frontend_prod:
+        container_name: frontend_prod
         build:
             context: ./frontend
-            dockerfile: Dockerfile
+            dockerfile: Dockerfile.prod
         ports:
-            - 8000:8000
+            - 80:80
+        environment:
+            - ENDPOINT="http://localhost:9000/api"
+            - PORT=80
