@@ -1,0 +1,8 @@
+- name: Deploy
+  hosts: aws-ec2
+  become: yes
+  roles:
+    - install_docker
+    - clone_repo
+    - copy_key
+    - run_app
