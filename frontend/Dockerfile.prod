@@ -1,4 +1,4 @@
-FROM node:16.16.0 as build
+FROM node:16.16.0
 
 WORKDIR /app
 
@@ -6,14 +6,6 @@ COPY . .
 
 RUN npm i
 
-ENV PORT=80
-
-ENV ENDPOINT="http://localhost:9000/api"
-
-RUN npm run build
-
-FROM nginx:1.21.1-alpine
-
-COPY --from=build /app/dist /usr/share/nginx/html
-
 EXPOSE 80
+
+CMD ["npm", "start"]

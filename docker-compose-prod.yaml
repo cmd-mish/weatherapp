@@ -17,5 +17,5 @@ services:
         ports:
             - 80:80
         environment:
-            - ENDPOINT="http://localhost:9000/api"
             - PORT=80
+            - ENDPOINT=http://13.50.73.128:9000/api
