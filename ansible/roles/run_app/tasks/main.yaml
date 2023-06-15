@@ -1,5 +1,5 @@
 ---
 - name: Run docker-compose
-  command: docker-compose up -d
+  command: docker-compose up -f docker-compose-prod.yml -d
   args:
     chdir: /home/ubuntu/weatherapp
