@@ -6,6 +6,7 @@ services:
             dockerfile: Dockerfile.prod
         ports:
             - 9000:9000
+        restart: always
         environment:
             - APPID=${APPID}
 
@@ -16,6 +17,7 @@ services:
             dockerfile: Dockerfile.prod
         ports:
             - 80:80
+        restart: always
         environment:
             - PORT=80
             - ENDPOINT=http://13.50.73.128:9000/api

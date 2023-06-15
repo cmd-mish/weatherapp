@@ -1,5 +1,6 @@
 # weatherapp
 
+The description of the task behind this application can be found [here](https://github.com/eficode/weatherapp)
 ## Prerequisites
 - Get [OpenWeatherMap API key](https://openweathermap.org/)
 - Clone this repository to your local machine
@@ -28,6 +29,7 @@ Building containers via docker-compose is the easiest way to setup development e
 
 ## Deploy application to the cloud with Ansible
 *Demo  of this application is deployed to AWS EC2 instance and available at [13.50.73.128](http://13.50.73.128)*
+
 - [Install Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) on your local machine
 - Launch a virtual machine (VM) in the cloud (e.g. [AWS EC2 instance](https://aws.amazon.com/ec2/)). Choose Ubuntu Server 22.04 LTS as an operating system or similar.
 - Place VM's SSH access key to `ansible/ec2-key.pem` file
@@ -35,4 +37,4 @@ Building containers via docker-compose is the easiest way to setup development e
 - Insert VM's public IP address to `docker-compose-prod.yaml` file at `ENDPOINT` environment variable
 - Insert VM's public IP address to `ansible/hosts.yaml` file at `ansible_host` 
 - Move to `ansible` directory and run `ansible-playbook deploy_app.yaml`
-- Open your VM's public IP address in your browser to display frontend (use http)
+- Open your VM's public IP address in your browser to display frontend (use http, not https)
