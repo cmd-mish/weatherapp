@@ -28,7 +28,6 @@ Building containers via docker-compose is the easiest way to set up a developmen
 - Run `docker build -t weatherapp_frontend . && docker run --rm -i -p 8000:8000 --name weatherapp_frontend -t weatherapp_frontend`
 
 ## Deploy application to the cloud with Ansible
-*Demo  of this application is deployed to AWS EC2 instance and available at [13.50.73.128](http://13.50.73.128)*
 
 - [Install Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) on your local machine
 - Launch a virtual machine (VM) in the cloud (e.g. [AWS EC2 instance](https://aws.amazon.com/ec2/)). Choose Ubuntu Server 22.04 LTS as an operating system or similar.
