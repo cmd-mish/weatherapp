@@ -50,7 +50,7 @@ Tasks:
 *Tasks on testing and NodeJS/React haven't been started*
 
 Things to improve:
-- [ ] Create VM in the cloud with Ansible
+- [ ] Create VM in the cloud with Terraform
 - [ ] Run VMs behind a load balancer, attach a domain name
 - [ ] Use Ansible Vault to encrypt sensitive data
 - [ ] Deploy build package of frontend, instead of development version (I ran into issue with webpack built and didn't have enough time to fix it)
